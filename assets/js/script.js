@@ -51,7 +51,8 @@ function passwordRandArray(){
 
   //loop through userChoice results and check the result of each spot
   for (var i = 0; i < resultsUser.length; i++) {
-     //if statements to concact the selectedChars
+
+     //if statements to concat the selectedChars
      if (i == 0 && resultsUser[i] === true){
        selectedChars = selectedChars.concat(specialChars);
 
@@ -75,10 +76,23 @@ return selectedChars;
 
 function generatePassword(){
 
-var passTest = passwordRandArray();
-console.log(numChars);
-console.log(passTest);
-return passTest;
+  //declare local variables
+var chosenCharacters = passwordRandArray();
+var joinPassword = "";
+
+//for loop to select random elements from the array
+
+
+//join the array together to create the password
+
+
+
+
+  console.log(numChars);
+  console.log(chosenCharacters);
+  
+  //return the generated password!
+  return passTest;
 }
 
 
