@@ -11,18 +11,29 @@ const lowerCaseChars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "
 
 //funciton that prompts user choices and receives answers
 function userChoices(){
-//receive input on password length, check against low of 8 and high of 128
 
+  var choicesArr = [];
+//receive input on password length, check against low of 8 and high of 128
+var numChars = window.prompt("How many characters would you like your password to be?");
+if (numChars >= 8 && numChars <= 128){
+
+}else {
+  window.alert("Please choose a number from 8-128.");
+  return;
+}
 
 //yes or no lowercase, uppercase, mumeric, and/or special characters OR
 //buttons for each type of special character OR // after yes have a text box
+
 var userSpecial = confirm("Do you want to include special characters?");
 var userUpper = confirm("Do you want to include upper case letters?");
 var userLower = confirm("Do you want to include upper case letters?");
 var userNum = confirm("Do you want to include numbers?");
+//return the array of user choices
+choicesArr = [numChars, userSpecial, userUpper, userLower, userNum];
+return choicesArr;
 
-
-
+console.log(`${numChars} ${userSpecial} ${userUpper} ${userLower} ${userNum}`);
 }
 
 //array to select each character in the password
@@ -33,8 +44,9 @@ function passwordRandArray(){
 
 
 function generatePassword(){
-
-
+// passArray = 
+var test = userChoices();
+console.log(test);
 
 }
 
