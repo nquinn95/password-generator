@@ -9,12 +9,15 @@ const upperCaseChars = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "
 
 const lowerCaseChars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
+//potential global variable for number of characters in the password
+var numChars;
+
 //funciton that prompts user choices and receives answers
 function userChoices(){
 
   var choicesArr = [];
 //receive input on password length, check against low of 8 and high of 128
-var numChars = window.prompt("How many characters would you like your password to be?");
+numChars = window.prompt("How many characters would you like your password to be?");
 if (numChars >= 8 && numChars <= 128){
 
 }else {
@@ -31,7 +34,7 @@ var userLower = confirm("Do you want to include upper case letters?");
 var userNum = confirm("Do you want to include numbers?");
 
 //add all user choices into an array
-choicesArr = [numChars, userSpecial, userUpper, userLower, userNum];
+choicesArr = [userSpecial, userUpper, userLower, userNum];
 
 //returns array of all user choices
 return choicesArr;
@@ -44,23 +47,37 @@ function passwordRandArray(){
 
   //define array with results of userChoice
   var resultsUser = userChoices();
-  resultsUser = resultsUser.splice[0];
+
 
   //loop through userChoice results and check the result of each spot
-  // for (var i = 0; i < array.resultsUser; i++) {
-  //    //if statements for adding all arrays togehter
+  for (var i = 0; i < resultsUser.length; i++) {
+     //if statements to concact the selectedChars
+     if (i == 0 && resultsUser[i] === true){
+       selectedChars = selectedChars.concat(specialChars);
+
+     }else if (i == 1 && resultsUser[i] === true){
+       selectedChars = selectedChars.concat(upperCaseChars);
+
+     }else if (i == 2 && resultsUser[i] === true){
+       selectedChars = selectedChars.concat(lowerCaseChars);
+
+     }else if (i == 3 && resultsUser[i] === true){
+       selectedChars = selectedChars.concat(numberChars);
+     }
+    }
 
     
-  // }
    
 
-return resultsUser;
+return selectedChars;
 }
 
 
 function generatePassword(){
 
 var passTest = passwordRandArray();
+console.log(numChars);
+console.log(passTest);
 return passTest;
 }
 
