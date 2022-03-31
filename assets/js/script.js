@@ -16,7 +16,10 @@ function userChoices(){
 
 //yes or no lowercase, uppercase, mumeric, and/or special characters OR
 //buttons for each type of special character OR // after yes have a text box
-var userSpecial = confirm("Do you want special characters");
+var userSpecial = confirm("Do you want to include special characters?");
+var userUpper = confirm("Do you want to include upper case letters?");
+var userLower = confirm("Do you want to include upper case letters?");
+var userNum = confirm("Do you want to include numbers?");
 
 
 
