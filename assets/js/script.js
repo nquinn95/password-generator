@@ -29,26 +29,42 @@ var userSpecial = confirm("Do you want to include special characters?");
 var userUpper = confirm("Do you want to include upper case letters?");
 var userLower = confirm("Do you want to include upper case letters?");
 var userNum = confirm("Do you want to include numbers?");
-//return the array of user choices
-choicesArr = [numChars, userSpecial, userUpper, userLower, userNum];
-return choicesArr;
 
-console.log(`${numChars} ${userSpecial} ${userUpper} ${userLower} ${userNum}`);
+//add all user choices into an array
+choicesArr = [numChars, userSpecial, userUpper, userLower, userNum];
+
+//returns array of all user choices
+return choicesArr;
 }
 
 //array to select each character in the password
 function passwordRandArray(){
+  //define local variables
+  var selectedChars = [];
 
+  //define array with results of userChoice
+  var resultsUser = userChoices();
+  resultsUser = resultsUser.splice[0];
 
+  //loop through userChoice results and check the result of each spot
+  // for (var i = 0; i < array.resultsUser; i++) {
+  //    //if statements for adding all arrays togehter
+
+    
+  // }
+   
+
+return resultsUser;
 }
 
 
 function generatePassword(){
-// passArray = 
-var test = userChoices();
-console.log(test);
 
+var passTest = passwordRandArray();
+return passTest;
 }
+
+
 
 // Write password to the #password input
 function writePassword() {
