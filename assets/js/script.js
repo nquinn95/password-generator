@@ -14,8 +14,9 @@ var numChars;
 
 //funciton that prompts user choices and receives answers
 function userChoices(){
-
+//local variable choicesArr to hold the choices from the user EXCLUDING password length
   var choicesArr = [];
+
 //receive input on password length, check against low of 8 and high of 128
 numChars = window.prompt("How many characters would you like your password to be?");
 if (numChars >= 8 && numChars <= 128){
@@ -30,7 +31,7 @@ if (numChars >= 8 && numChars <= 128){
 
 var userSpecial = confirm("Do you want to include special characters?");
 var userUpper = confirm("Do you want to include upper case letters?");
-var userLower = confirm("Do you want to include upper case letters?");
+var userLower = confirm("Do you want to include lower case letters?");
 var userNum = confirm("Do you want to include numbers?");
 
 //add all user choices into an array
@@ -50,7 +51,7 @@ function passwordRandArray(){
 
 
   //loop through userChoice results and check the result of each spot
-  for (var i = 0; i < resultsUser.length; i++) {
+  for (var i = 0; i <= resultsUser.length; i++) {
 
      //if statements to concat the selectedChars
      if (i == 0 && resultsUser[i] === true){
@@ -78,21 +79,33 @@ function generatePassword(){
 
   //declare local variables
 var chosenCharacters = passwordRandArray();
-var joinPassword = "";
+var finalPassArray = [];
+
+console.log(chosenCharacters);
 
 //for loop to select random elements from the array
+for(var i = 0; i <= numChars; i++){
 
+  //randomNumber is the math for a random item from the array
+  randomNumber = Math.floor(Math.random() * chosenCharacters.length);
+
+
+  let pleaseWork = chosenCharacters[randomNumber];
+
+  finalPassArray = finalPassArray.concat(pleaseWork);
+
+}
 
 //join the array together to create the password
 
 
-
+finalPassArray = finalPassArray.join(" ");
 
   console.log(numChars);
   console.log(chosenCharacters);
   
   //return the generated password!
-  return passTest;
+  return finalPassArray;
 }
 
 
