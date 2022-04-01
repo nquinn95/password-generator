@@ -34,6 +34,12 @@ var userUpper = confirm("Do you want to include upper case letters?");
 var userLower = confirm("Do you want to include lower case letters?");
 var userNum = confirm("Do you want to include numbers?");
 
+//checks if all are false and if it does
+if (userSpecial === false && userUpper === false && userLower === false && userNum === false){
+  window.alert("Please choose at least one character");
+  return;
+}
+
 //add all user choices into an array
 choicesArr = [userSpecial, userUpper, userLower, userNum];
 
@@ -84,7 +90,7 @@ var finalPassArray = [];
 console.log(chosenCharacters);
 
 //for loop to select random elements from the array
-for(var i = 0; i <= numChars; i++){
+for(var i = 0; i < numChars; i++){
 
   //randomNumber is the math for a random item from the array
   randomNumber = Math.floor(Math.random() * chosenCharacters.length);
@@ -101,8 +107,8 @@ for(var i = 0; i <= numChars; i++){
 
 finalPassArray = finalPassArray.join(" ");
 
-  console.log(numChars);
-  console.log(chosenCharacters);
+  // console.log(numChars);
+  // console.log(chosenCharacters);
   
   //return the generated password!
   return finalPassArray;
