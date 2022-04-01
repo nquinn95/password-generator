@@ -14,6 +14,7 @@ var numChars;
 
 //funciton that prompts user choices and receives answers
 function userChoices(){
+  
 //local variable choicesArr to hold the choices from the user EXCLUDING password length
   var choicesArr = [];
 
