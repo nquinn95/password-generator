@@ -105,7 +105,7 @@ for(var i = 0; i < numChars; i++){
 //join the array together to create the password
 
 
-finalPassArray = finalPassArray.join(" ");
+finalPassArray = finalPassArray.join("");
 
   // console.log(numChars);
   // console.log(chosenCharacters);
